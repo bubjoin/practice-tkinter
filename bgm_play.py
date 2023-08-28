@@ -2,6 +2,17 @@
 # Thread cannot give you a performance upgrade,
 # but it still gives you a background music!
 
+# Threads are players who can play something simultaneously
+# (it looks simultaneous)
+# The first player can play background music
+# The second player can play an effect sound
+# ...
+# Process is a place where players can live
+# (or a player can live)
+# 
+# Asynchronous means making a player do diffrent things continuously
+# without taking a rest while a thing is not completed
+
 import tkinter
 from tkinter import ttk
 import time

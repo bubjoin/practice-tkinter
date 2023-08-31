@@ -3,22 +3,22 @@ from tkinter import ttk
 
 window=tkinter.Tk()
 window.title("Text Box")
-window.geometry("400x500+100+100")
+window.geometry("420x460+100+100")
 window.resizable(False, False)
 window.config(background='white')
 
 text_box_yscrollbar = tkinter.Scrollbar(window, orient="vertical")
 
-text_box=tkinter.Text(window, borderwidth=1, 
+text_box=tkinter.Text(window, borderwidth=2, 
                       background='white', 
                       width=50, height=20,
-                      relief="solid",
+                      relief="groove",
                       padx=5, pady=5,
                       spacing1=5,
                       yscrollcommand=text_box_yscrollbar.set)
 
 text_box_yscrollbar.config(command=text_box.yview)
-text_box_yscrollbar.place(x=380, y=20, height=372)
+text_box_yscrollbar.place(x=382, y=24, height=373)
 
 text_box.insert("end", "Hello, World!\n")
 text_box.insert("end", "This is a text box\n")
@@ -28,7 +28,7 @@ text_box.insert("end", "Yes! Yes! Yes! Yes! Yes! Yes! Yes! Yes! Yes! Yes! \n")
 text_box.insert("end", "0123456789"*5)
 
 text_box['state'] = 'disabled' # <-> 'normal'
-text_box.place(x=20, y=20)
+text_box.place(x=20, y=24)
 
 def put_str(event):
     text_box['state'] = 'normal'
@@ -37,10 +37,11 @@ def put_str(event):
     text_box.see("end")
     input_box.delete(0, "end")
 
-input_box=tkinter.Entry(window, width=51, relief="solid",
+input_box=tkinter.Entry(window, width=51, 
+                        relief="groove", borderwidth=2,
                         font=("calibri", 10, "bold"),)
 input_box.focus()
 input_box.bind("<Return>", put_str)
-input_box.place(x=20, y=420)
+input_box.place(x=20, y=410)
 
 window.mainloop()
